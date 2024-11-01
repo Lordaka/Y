@@ -35,7 +35,7 @@ module.exports = {
       const { url } = this.checkLink(event.body);
       console.log(`Attempting to download from URL: ${url}`);
       this.downLoad(url, api, event);
-      api.setMessageReaction("💐", event.messageID, (err) => {}, true);
+      api.setMessageReaction("🧏", event.messageID, (err) => {}, true);
     }
   },
   downLoad: function (url, api, event) {
@@ -98,7 +98,7 @@ module.exports = {
           }, event.threadID, () => fs.unlinkSync(path), event.messageID);
         });
       } else {
-        api.sendMessage("❌", event.threadID, event.messageID);
+        api.sendMessage("😐", event.threadID, event.messageID);
       }
     } catch (err) {
       console.error(err);
